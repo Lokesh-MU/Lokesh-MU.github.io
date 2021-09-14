@@ -2,65 +2,7 @@
 <html lang ="en">
   <head>
     
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-  <!-- The design is taken from https://www.11zon.com/zon/php/how-to-fetch-image-from-database-in-php-and-display-in-div.php -->
-
-<link rel="stylesheet" href="style.css">
-  <title>Fetch image from database in PHP</title>
-  <div class="topnav">
-  <a href="index.html">Home</a>
-  <a class="active" href="#view">View images</a>
- 
-</div>
-</head>
-<body>
-
-<h2>All Records</h2>
-
-<table border="2">
-  <tr>
-    <td>Sr.No.</td>
-    <td>File Path</td>
-    <td>File Type</td>
-    <td>File Size</td>
-    <td>Relative Path </td>
-    <td>Uploaded</td>
-    <td>Image</td>
-  </tr>
-
-  <?php
-
-include_once("../../dbconnection.php");
-
-$sql = "SELECT * FROM images";
-$result = mysqli_query($mysqli, $sql);
-
-
-  // output data of each row
- 
-  while($data = mysqli_fetch_assoc($result)) {
-    ?>
-    <tr>
-    <td><?php echo $data['id']; ?></td>
-    <td><?php echo $data['path_to_image']; ?></td>
-    <td><?php echo $data['file_type']; ?></td>
-    <td><?php echo $data['file_size']; ?></td>
-    <td><?php echo $data['relative_path']; ?></td>
-    <td><?php echo $data['uploaded']; ?></td>
-    <td><img src= "<?php echo $data['relative_path']; ?>"  alt="images"></td>
-  </tr>	
-<?php
-}
-?>
-</table>
-<?php mysqli_close($mysqli);  
-
-
-
-?>
+<meta charset = 'utf-8'>
 
 </body>
 </html>
